@@ -14,12 +14,8 @@ const images = [
 ];
 
 const ul = document.querySelector(".gallery");
+const li = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join("");
 
-images.forEach((image) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.src = image.url;
-  img.alt = image.alt;
-  li.appendChild(img);
-  ul.appendChild(li);
-});
+ul.insertAdjacentHTML("beforeend", li);

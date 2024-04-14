@@ -9,6 +9,7 @@ const input = controls.querySelector("input");
 const createBtn = controls.querySelector("[data-create]");
 const destroyBtn = controls.querySelector("[data-destroy]");
 const boxes = document.querySelector("#boxes");
+const fragment = document.createDocumentFragment();
 
 createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
@@ -29,9 +30,10 @@ function createBoxes() {
     div.style.width = `${boxSize}px`;
     div.style.height = `${boxSize}px`;
     div.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(div);
+    fragment.appendChild(div);
     boxSize += 10;
   }
+  boxes.appendChild(fragment);
   input.value = "";
 }
 

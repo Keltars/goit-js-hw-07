@@ -7,13 +7,16 @@ const onFormSubmit = (event) => {
     email: formEl.email.value.trim(),
     password: formEl.password.value.trim(),
   };
-  console.log(info);
 
   if (info.email === "" || info.password === "") {
     alert("All form fields must be filled in");
+    return;
+  } else {
+    formEl.email.value = "";
+    formEl.password.value = "";
   }
 
-  event.currentTarget.reset();
+  console.log(info);
 };
 
 form.addEventListener("submit", onFormSubmit);
