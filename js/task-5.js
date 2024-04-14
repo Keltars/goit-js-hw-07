@@ -10,8 +10,8 @@ const btn = document.querySelector(".change-color");
 
 function handleClick() {
   const randomColor = getRandomHexColor();
-  background.style.backgroundColor = `${randomColor}`;
-  text.textContent = `${randomColor}`;
+  background.style.backgroundColor = randomColor;
+  text.textContent = randomColor;
 }
 
 btn.addEventListener("click", handleClick);
